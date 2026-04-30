@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us – MAS English Medium School</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #1a4731;
+    --green-mid: #1e5e40;
+    --green-accent: #2d7a55;
+    --green-light: #3a9e6e;
+    --gold: #c9a84c;
+    --white: #ffffff;
+    --off-white: #f7f9f7;
+    --text-dark: #1a2e1f;
+    --text-gray: #556b5e;
+    --border: #d8e8df;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+  /* TOP BAR */
+  .topbar { background: var(--green-dark); color: #b8d4c5; font-size: 12.5px; padding: 7px 0; }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; }
+  .topbar-links { display: flex; gap: 20px; }
+  .topbar-links a { color: #b8d4c5; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; font-weight: 500; }
+  .topbar-links a:hover { color: var(--white); }
+  .topbar-links svg { width: 13px; height: 13px; fill: currentColor; }
+
+  /* NAV */
+  nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(30,94,64,0.07); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-badge { width: 82px; height: 82px;border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .logo-badge img { width: 82px; height: 82px; }
+  .logo-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 18px; color: var(--green-dark); line-height: 1.1; }
+  .logo-text span { font-size: 11px; color: var(--text-gray); letter-spacing: 0.05em; text-transform: uppercase; }
+  .logo-text small { display: block; font-size: 10px; color: var(--text-gray); }
+  .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--text-dark); padding: 8px 12px; border-radius: 6px; transition: all 0.2s; display: flex; align-items: center; gap: 4px; }
+  .nav-links a:hover { color: var(--green-mid); background: rgba(30,94,64,0.06); }
+  .nav-links a.active { color: var(--green-mid); border-bottom: 2px solid var(--green-mid); border-radius: 6px 6px 0 0; }
+  .btn-enquire { background: var(--green-dark) !important; color: var(--white) !important; padding: 10px 18px !important; border-radius: 8px !important; font-weight: 600 !important; }
+  .btn-enquire:hover { background: var(--green-accent) !important; }
+
+  /* HERO BANNER */
+  .about-hero {
+    position: relative;
+    min-height: 420px;
+    background: linear-gradient(135deg, #eaf3ee 0%, #d8ecdf 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-bg-img {
+    position: absolute; right: 0; top: 0;
+    width: 55%; height: 100%;
+    object-fit: cover; object-position: center;
+  }
+  .hero-bg-placeholder {
+    position: absolute; right: 0; top: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(160deg, #b8d8c8 0%, #8abca6 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-overlay {
+    position: absolute; right: 0; top: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(to right, #eaf3ee 0%, transparent 30%);
+  }
+  .hero-content { position: relative; z-index: 2; padding: 72px 0; max-width: 52%; }
+  .about-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--green-accent); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .about-label::before { content: ''; width: 28px; height: 2px; background: var(--green-accent); border-radius: 2px; }
+  .about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+  .about-hero p { font-size: 15.5px; line-height: 1.75; color: var(--text-gray); max-width: 460px; margin-bottom: 36px; }
+  .hero-badges { display: flex; gap: 28px; flex-wrap: wrap; }
+  .hero-badge { display: flex; align-items: center; gap: 12px; }
+  .hb-icon { width: 42px; height: 42px; background: var(--green-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .hb-icon svg { width: 20px; height: 20px; fill: var(--white); }
+  .hb-text strong { display: block; font-size: 13.5px; font-weight: 700; color: var(--text-dark); }
+  .hb-text span { font-size: 12px; color: var(--text-gray); }
+
+  /* MISSION VISION VALUES */
+  .mvv-section { background: var(--off-white); padding: 64px 0; }
+  .mvv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--white); box-shadow: 0 4px 24px rgba(30,94,64,0.06); }
+  .mvv-item { padding: 40px 36px; border-right: 1px solid var(--border); transition: background 0.2s; }
+  .mvv-item:last-child { border-right: none; }
+  .mvv-item:hover { background: #f0f8f3; }
+  .mvv-icon { width: 52px; height: 52px; background: var(--green-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .mvv-icon svg { width: 26px; height: 26px; fill: var(--gold); }
+  .mvv-item h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--green-dark); margin-bottom: 14px; }
+  .mvv-item p { font-size: 14.5px; line-height: 1.75; color: var(--text-gray); }
+  .values-list { list-style: none; margin-top: 4px; display: flex; flex-direction: column; gap: 7px; }
+  .values-list li { font-size: 14px; color: var(--text-gray); display: flex; align-items: center; gap: 8px; }
+  .values-list li::before { content: ''; width: 6px; height: 6px; background: var(--green-accent); border-radius: 50%; flex-shrink: 0; }
+
+  /* OUR STORY */
+  .story-section { padding: 80px 0; }
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .story-content .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--green-accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 0;
+  }
+  .story-content .section-label::after { content: ''; display: block; width: 32px; height: 2px; background: var(--gold); border-radius: 2px; margin-left: 12px; }
+  .story-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 36px); font-weight: 700; color: var(--text-dark); line-height: 1.2; margin-bottom: 20px; }
+  .story-content p { font-size: 15px; line-height: 1.8; color: var(--text-gray); }
+  .story-image { position: relative; }
+  .story-image .img-box {
+    width: 100%; height: 380px;
+    background: linear-gradient(135deg, #c6e0d2, #8abca6);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(26,71,49,0.15);
+  }
+  .story-image img { width: 100%; height: 380px; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 40px rgba(26,71,49,0.15); display: block; }
+  .story-badge {
+    position: absolute; bottom: -18px; left: -18px;
+    background: var(--green-dark);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 18px 24px;
+    box-shadow: 0 8px 24px rgba(26,71,49,0.3);
+  }
+  .story-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1; }
+  .story-badge span { font-size: 12px; color: #9ec4b0; }
+
+  /* STATS */
+  .stats-bar { background: var(--green-dark); padding: 48px 0; }
+  .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+  .stat-item { text-align: center; padding: 16px 20px; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat-item:last-child { border-right: none; }
+  .stat-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+  .stat-icon svg { width: 20px; height: 20px; fill: var(--gold); }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 800; color: var(--white); line-height: 1; }
+  .stat-unit { font-size: 20px; color: var(--gold); }
+  .stat-label { font-size: 12.5px; color: #9ec4b0; margin-top: 5px; line-height: 1.4; }
+
+  /* LEADERSHIP */
+  .leadership-section { padding: 80px 0; background: var(--off-white); }
+  .leadership-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 38px); font-weight: 700; color: var(--text-dark); margin-bottom: 40px; }
+  .leaders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .leader-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    display: flex; gap: 24px; align-items: flex-start;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .leader-card:hover { box-shadow: 0 8px 32px rgba(26,71,49,0.12); transform: translateY(-2px); }
+  .leader-photo {
+    width: 100px; height: 110px; min-width: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #d0e8da, #a8ccb8);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .leader-photo svg { width: 40px; height: 40px; fill: #1e5e40; opacity: 0.35; }
+  .leader-info { flex: 1; }
+  .leader-info h4 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+  .leader-role {
+    display: inline-block;
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--green-accent);
+    background: rgba(45,122,85,0.1);
+    padding: 3px 10px; border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .leader-info p { font-size: 14px; line-height: 1.7; color: var(--text-gray); }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: var(--off-white);
+    padding: 0 0 64px;
+  }
+  .cta-inner {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 48px;
+    display: flex; align-items: center; justify-content: space-between; gap: 32px;
+    box-shadow: 0 4px 24px rgba(30,94,64,0.06);
+  }
+  .cta-left { display: flex; align-items: center; gap: 24px; }
+  .cta-icon { width: 56px; height: 56px; background: rgba(30,94,64,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cta-icon svg { width: 28px; height: 28px; fill: var(--green-dark); }
+  .cta-text h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+  .cta-text p { font-size: 14px; color: var(--text-gray); }
+  .btn-primary {
+    background: var(--green-dark); color: var(--white);
+    padding: 13px 26px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 14px rgba(26,71,49,0.25);
+  }
+  .btn-primary:hover { background: var(--green-accent); transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer { background: #0f2b1d; color: #9ec4b0; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 0; display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; color: #5a9070; }
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { color: #5a9070; text-decoration: none; }
+  .footer-bottom-links a:hover { color: var(--white); }
+
+  @media (max-width: 900px) {
+    .mvv-grid { grid-template-columns: 1fr; }
+    .mvv-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .story-grid, .leaders-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .about-hero .hero-content { max-width: 100%; }
+    .hero-bg-placeholder, .hero-overlay { display: none; }
+    .cta-inner { flex-direction: column; text-align: center; }
+    .cta-left { flex-direction: column; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-badge">
+         <img src="logo.png" alt="Logo" class="logo-badge"/>
+        </div>
+        <div class="logo-text">
+          <strong>MAS</strong>
+          <span>English Medium School</span>
+          <small>Learn · Grow · Excel</small>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="v2about.html" class="active">About Us</a></li>
+        <li><a href="v2academics.html">Academics </a></li>
+        <li><a href="v2admissions.html">Admissions</a></li>
+        <li><a href="v2facilities.html">Facilities</a></li>
+        <li><a href="v2gallery.html">Gallery</a></li>
+        <li><a href="v2news.html">News &amp; Events</a></li>
+        <li><a href="v2contact.html">Contact Us</a></li>
+        <li><a href="v2form.html" class="btn-enquire">Enquire Now </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO BANNER -->
+<section class="about-hero">
+  <!-- School building placeholder (right side) -->
+  <div class="hero-bg-placeholder">
+    <svg width="80" height="80" viewBox="0 0 24 24" fill="#1a4731" opacity="0.25"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="about-label">About Us</div>
+      <h1>A Legacy of Learning.<br><em style="font-style:italic;color:var(--green-mid);">A Future of Possibilities.</em></h1>
+      <p>At MAS English Medium School, we are committed to nurturing young minds with knowledge, values, and creativity. Our mission is to empower students to become responsible global citizens and lifelong learners.</p>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <div class="hb-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1z"/></svg>
+          </div>
+          <div class="hb-text">
+            <strong>Quality Education</strong>
+            <span>A strong foundation for academic excellence.</span>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="hb-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="hb-text">
+            <strong>Holistic Development</strong>
+            <span>Encouraging growth in mind, body, and character.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / VALUES -->
+<section class="mvv-section">
+  <div class="container">
+    <div class="mvv-grid">
+      <div class="mvv-item">
+        <div class="mvv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
+        <h3>Our Mission</h3>
+        <p>To provide a nurturing environment that inspires students to learn, grow, and excel in all walks of life.</p>
+      </div>
+      <div class="mvv-item">
+        <div class="mvv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        </div>
+        <h3>Our Vision</h3>
+        <p>To be a leading institution recognized for academic excellence, innovation, and character building.</p>
+      </div>
+      <div class="mvv-item">
+        <div class="mvv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <h3>Our Values</h3>
+        <ul class="values-list">
+          <li>Integrity</li>
+          <li>Respect</li>
+          <li>Excellence</li>
+          <li>Compassion</li>
+          <li>Responsibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-content">
+        <div class="section-label">Our Story</div>
+        <h2>Built on Vision. Driven by Purpose.</h2>
+        <p>Established with a vision to transform education, MAS English Medium School has grown into a trusted name in academic excellence and holistic development. With state-of-the-art facilities, experienced faculty, and a student-centric approach, we continue to shape future leaders who make a positive impact on society.</p>
+      </div>
+      <div class="story-image">
+        <!-- Students in classroom placeholder -->
+        <div class="img-box">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="#1a4731" opacity="0.2"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 12.45L3.48 10.7 12 6.05l8.52 4.65L12 15.45z"/></svg>
+        </div>
+        <div class="story-badge">
+          <strong>15+</strong>
+          <span>Years of Excellence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="leadership-section">
+  <div class="container">
+    <h2>Our Leadership</h2>
+    <div class="leaders-grid">
+
+      <div class="leader-card">
+        <div class="leader-photo">
+          <img src="Lusha.jpeg" alt="Ms. Lusha Aanni Maneksha" class="leader-photo"/>
+        </div>
+        <div class="leader-info">
+          <h4>Ms. Lusha Aanni Maneksha</h4>
+          <span class="leader-role">Principal</span>
+          <p>With over 20 years of experience in education leadership, Ms. Lusha believes in creating a culture of excellence and innovation.</p>
+        </div>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-photo">
+          <img src="Reji.jpeg" alt="Ms. Lusha Aanni Maneksha" class="leader-photo"/>
+        </div>
+        <div class="leader-info">
+          <h4>Mr. Reji Mathew</h4>
+          <span class="leader-role">Director</span>
+          <p>Mr. Reji is dedicated to student well-being and holistic development, ensuring every child reaches their full potential.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-left">
+        <div class="cta-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+        </div>
+        <div class="cta-text">
+          <h3>Together, We Build Bright Futures</h3>
+          <p>We invite you to be a part of the MAS family and embark on a journey of learning, growth, and success.</p>
+        </div>
+      </div>
+      <a href="#" class="btn-primary">Take a Campus Tour →</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us – MAS English Medium School</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #1a4731;
+    --green-mid: #1e5e40;
+    --green-accent: #2d7a55;
+    --green-light: #3a9e6e;
+    --gold: #c9a84c;
+    --white: #ffffff;
+    --off-white: #f7f9f7;
+    --text-dark: #1a2e1f;
+    --text-gray: #556b5e;
+    --border: #d8e8df;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+  /* TOP BAR */
+  .topbar { background: var(--green-dark); color: #b8d4c5; font-size: 12.5px; padding: 7px 0; }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; }
+  .topbar-links { display: flex; gap: 20px; }
+  .topbar-links a { color: #b8d4c5; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; font-weight: 500; }
+  .topbar-links a:hover { color: var(--white); }
+  .topbar-links svg { width: 13px; height: 13px; fill: currentColor; }
+
+  /* NAV */
+  nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(30,94,64,0.07); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-badge { width: 82px; height: 82px;border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .logo-badge img { width: 82px; height: 82px; }
+  .logo-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 18px; color: var(--green-dark); line-height: 1.1; }
+  .logo-text span { font-size: 11px; color: var(--text-gray); letter-spacing: 0.05em; text-transform: uppercase; }
+  .logo-text small { display: block; font-size: 10px; color: var(--text-gray); }
+  .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--text-dark); padding: 8px 12px; border-radius: 6px; transition: all 0.2s; display: flex; align-items: center; gap: 4px; }
+  .nav-links a:hover { color: var(--green-mid); background: rgba(30,94,64,0.06); }
+  .nav-links a.active { color: var(--green-mid); border-bottom: 2px solid var(--green-mid); border-radius: 6px 6px 0 0; }
+  .btn-enquire { background: var(--green-dark) !important; color: var(--white) !important; padding: 10px 18px !important; border-radius: 8px !important; font-weight: 600 !important; }
+  .btn-enquire:hover { background: var(--green-accent) !important; }
+
+  /* HERO BANNER */
+  .about-hero {
+    position: relative;
+    min-height: 420px;
+    background: linear-gradient(135deg, #eaf3ee 0%, #d8ecdf 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-bg-img {
+    position: absolute; right: 0; top: 0;
+    width: 55%; height: 100%;
+    object-fit: cover; object-position: center;
+  }
+  .hero-bg-placeholder {
+    position: absolute; right: 0; top: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(160deg, #b8d8c8 0%, #8abca6 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-overlay {
+    position: absolute; right: 0; top: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(to right, #eaf3ee 0%, transparent 30%);
+  }
+  .hero-content { position: relative; z-index: 2; padding: 72px 0; max-width: 52%; }
+  .about-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--green-accent); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .about-label::before { content: ''; width: 28px; height: 2px; background: var(--green-accent); border-radius: 2px; }
+  .about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+  .about-hero p { font-size: 15.5px; line-height: 1.75; color: var(--text-gray); max-width: 460px; margin-bottom: 36px; }
+  .hero-badges { display: flex; gap: 28px; flex-wrap: wrap; }
+  .hero-badge { display: flex; align-items: center; gap: 12px; }
+  .hb-icon { width: 42px; height: 42px; background: var(--green-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .hb-icon svg { width: 20px; height: 20px; fill: var(--white); }
+  .hb-text strong { display: block; font-size: 13.5px; font-weight: 700; color: var(--text-dark); }
+  .hb-text span { font-size: 12px; color: var(--text-gray); }
+
+  /* MISSION VISION VALUES */
+  .mvv-section { background: var(--off-white); padding: 64px 0; }
+  .mvv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--white); box-shadow: 0 4px 24px rgba(30,94,64,0.06); }
+  .mvv-item { padding: 40px 36px; border-right: 1px solid var(--border); transition: background 0.2s; }
+  .mvv-item:last-child { border-right: none; }
+  .mvv-item:hover { background: #f0f8f3; }
+  .mvv-icon { width: 52px; height: 52px; background: var(--green-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .mvv-icon svg { width: 26px; height: 26px; fill: var(--gold); }
+  .mvv-item h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--green-dark); margin-bottom: 14px; }
+  .mvv-item p { font-size: 14.5px; line-height: 1.75; color: var(--text-gray); }
+  .values-list { list-style: none; margin-top: 4px; display: flex; flex-direction: column; gap: 7px; }
+  .values-list li { font-size: 14px; color: var(--text-gray); display: flex; align-items: center; gap: 8px; }
+  .values-list li::before { content: ''; width: 6px; height: 6px; background: var(--green-accent); border-radius: 50%; flex-shrink: 0; }
+
+  /* OUR STORY */
+  .story-section { padding: 80px 0; }
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .story-content .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--green-accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 0;
+  }
+  .story-content .section-label::after { content: ''; display: block; width: 32px; height: 2px; background: var(--gold); border-radius: 2px; margin-left: 12px; }
+  .story-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 36px); font-weight: 700; color: var(--text-dark); line-height: 1.2; margin-bottom: 20px; }
+  .story-content p { font-size: 15px; line-height: 1.8; color: var(--text-gray); }
+  .story-image { position: relative; }
+  .story-image .img-box {
+    width: 100%; height: 380px;
+    background: linear-gradient(135deg, #c6e0d2, #8abca6);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(26,71,49,0.15);
+  }
+  .story-image img { width: 100%; height: 380px; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 40px rgba(26,71,49,0.15); display: block; }
+  .story-badge {
+    position: absolute; bottom: -18px; left: -18px;
+    background: var(--green-dark);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 18px 24px;
+    box-shadow: 0 8px 24px rgba(26,71,49,0.3);
+  }
+  .story-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1; }
+  .story-badge span { font-size: 12px; color: #9ec4b0; }
+
+  /* STATS */
+  .stats-bar { background: var(--green-dark); padding: 48px 0; }
+  .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+  .stat-item { text-align: center; padding: 16px 20px; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat-item:last-child { border-right: none; }
+  .stat-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+  .stat-icon svg { width: 20px; height: 20px; fill: var(--gold); }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 800; color: var(--white); line-height: 1; }
+  .stat-unit { font-size: 20px; color: var(--gold); }
+  .stat-label { font-size: 12.5px; color: #9ec4b0; margin-top: 5px; line-height: 1.4; }
+
+  /* LEADERSHIP */
+  .leadership-section { padding: 80px 0; background: var(--off-white); }
+  .leadership-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 38px); font-weight: 700; color: var(--text-dark); margin-bottom: 40px; }
+  .leaders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .leader-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    display: flex; gap: 24px; align-items: flex-start;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .leader-card:hover { box-shadow: 0 8px 32px rgba(26,71,49,0.12); transform: translateY(-2px); }
+  .leader-photo {
+    width: 100px; height: 110px; min-width: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #d0e8da, #a8ccb8);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .leader-photo svg { width: 40px; height: 40px; fill: #1e5e40; opacity: 0.35; }
+  .leader-info { flex: 1; }
+  .leader-info h4 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+  .leader-role {
+    display: inline-block;
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--green-accent);
+    background: rgba(45,122,85,0.1);
+    padding: 3px 10px; border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .leader-info p { font-size: 14px; line-height: 1.7; color: var(--text-gray); }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: var(--off-white);
+    padding: 0 0 64px;
+  }
+  .cta-inner {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 48px;
+    display: flex; align-items: center; justify-content: space-between; gap: 32px;
+    box-shadow: 0 4px 24px rgba(30,94,64,0.06);
+  }
+  .cta-left { display: flex; align-items: center; gap: 24px; }
+  .cta-icon { width: 56px; height: 56px; background: rgba(30,94,64,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cta-icon svg { width: 28px; height: 28px; fill: var(--green-dark); }
+  .cta-text h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+  .cta-text p { font-size: 14px; color: var(--text-gray); }
+  .btn-primary {
+    background: var(--green-dark); color: var(--white);
+    padding: 13px 26px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 14px rgba(26,71,49,0.25);
+  }
+  .btn-primary:hover { background: var(--green-accent); transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer { background: #0f2b1d; color: #9ec4b0; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 18px 0; display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; color: #5a9070; }
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { color: #5a9070; text-decoration: none; }
+  .footer-bottom-links a:hover { color: var(--white); }
+
+  @media (max-width: 900px) {
+    .mvv-grid { grid-template-columns: 1fr; }
+    .mvv-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .story-grid, .leaders-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .about-hero .hero-content { max-width: 100%; }
+    .hero-bg-placeholder, .hero-overlay { display: none; }
+    .cta-inner { flex-direction: column; text-align: center; }
+    .cta-left { flex-direction: column; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-badge">
+         <img src="logo.png" alt="Logo" class="logo-badge"/>
+        </div>
+        <div class="logo-text">
+          <strong>MAS</strong>
+          <span>English Medium School</span>
+          <small>Learn · Grow · Excel</small>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="v2.html">Home</a></li>
+        <li><a href="v2about.html" class="active">About Us</a></li>
+        <li><a href="v2academics.html">Academics </a></li>
+        <li><a href="v2admissions.html">Admissions</a></li>
+        <li><a href="v2facilities.html">Facilities</a></li>
+        <li><a href="v2gallery.html">Gallery</a></li>
+        <li><a href="v2news.html">News &amp; Events</a></li>
+        <li><a href="v2contact.html">Contact Us</a></li>
+        <li><a href="v2form.html" class="btn-enquire">Enquire Now ↗</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO BANNER -->
+<section class="about-hero">
+  <!-- School building placeholder (right side) -->
+  <div class="hero-bg-placeholder">
+    <svg width="80" height="80" viewBox="0 0 24 24" fill="#1a4731" opacity="0.25"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="about-label">About Us</div>
+      <h1>A Legacy of Learning.<br><em style="font-style:italic;color:var(--green-mid);">A Future of Possibilities.</em></h1>
+      <p>At MAS English Medium School, we are committed to nurturing young minds with knowledge, values, and creativity. Our mission is to empower students to become responsible global citizens and lifelong learners.</p>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <div class="hb-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1z"/></svg>
+          </div>
+          <div class="hb-text">
+            <strong>Quality Education</strong>
+            <span>A strong foundation for academic excellence.</span>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="hb-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="hb-text">
+            <strong>Holistic Development</strong>
+            <span>Encouraging growth in mind, body, and character.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / VALUES -->
+<section class="mvv-section">
+  <div class="container">
+    <div class="mvv-grid">
+      <div class="mvv-item">
+        <div class="mvv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
+        <h3>Our Mission</h3>
+        <p>To provide a nurturing environment that inspires students to learn, grow, and excel in all walks of life.</p>
+      </div>
+      <div class="mvv-item">
+        <div class="mvv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        </div>
+        <h3>Our Vision</h3>
+        <p>To be a leading institution recognized for academic excellence, innovation, and character building.</p>
+      </div>
+      <div class="mvv-item">
+        <div class="mvv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <h3>Our Values</h3>
+        <ul class="values-list">
+          <li>Integrity</li>
+          <li>Respect</li>
+          <li>Excellence</li>
+          <li>Compassion</li>
+          <li>Responsibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-content">
+        <div class="section-label">Our Story</div>
+        <h2>Built on Vision. Driven by Purpose.</h2>
+        <p>Established with a vision to transform education, MAS English Medium School has grown into a trusted name in academic excellence and holistic development. With state-of-the-art facilities, experienced faculty, and a student-centric approach, we continue to shape future leaders who make a positive impact on society.</p>
+      </div>
+      <div class="story-image">
+        <!-- Students in classroom placeholder -->
+        <div class="img-box">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="#1a4731" opacity="0.2"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 12.45L3.48 10.7 12 6.05l8.52 4.65L12 15.45z"/></svg>
+        </div>
+        <div class="story-badge">
+          <strong>15+</strong>
+          <span>Years of Excellence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="leadership-section">
+  <div class="container">
+    <h2>Our Leadership</h2>
+    <div class="leaders-grid">
+
+      <div class="leader-card">
+        <div class="leader-photo">
+          <img src="Lusha.jpeg" alt="Ms. Lusha Aanni Maneksha" class="leader-photo"/>
+        </div>
+        <div class="leader-info">
+          <h4>Ms. Lusha Aanni Maneksha</h4>
+          <span class="leader-role">Principal</span>
+          <p>With over 20 years of experience in education leadership, Ms. Lusha believes in creating a culture of excellence and innovation.</p>
+        </div>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-photo">
+          <img src="Reji.jpeg" alt="Ms. Lusha Aanni Maneksha" class="leader-photo"/>
+        </div>
+        <div class="leader-info">
+          <h4>Mr. Reji Mathew</h4>
+          <span class="leader-role">Dircter</span>
+          <p>Mr. Reji is dedicated to student well-being and holistic development, ensuring every child reaches their full potential.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-left">
+        <div class="cta-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+        </div>
+        <div class="cta-text">
+          <h3>Together, We Build Bright Futures</h3>
+          <p>We invite you to be a part of the MAS family and embark on a journey of learning, growth, and success.</p>
+        </div>
+      </div>
+      <a href="#" class="btn-primary">Take a Campus Tour →</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+>>>>>>> fa8b92d (Added two files)
