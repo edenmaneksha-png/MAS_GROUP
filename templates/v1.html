@@ -1,0 +1,652 @@
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAS English Medium School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --green-dark: #1a4731;
+        --green-mid: #1e5e40;
+        --green-accent: #2d7a55;
+        --green-light: #3a9e6e;
+        --gold: #c9a84c;
+        --white: #ffffff;
+        --off-white: #f7f9f7;
+        --text-dark: #1a2e1f;
+        --text-gray: #556b5e;
+        --border: #d8e8df;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        color: var(--text-dark);
+        background: var(--white);
+        overflow-x: hidden;
+    }
+
+    /* TOP BAR */
+    .topbar {
+        background: var(--green-dark);
+        color: #b8d4c5;
+        font-size: 12.5px;
+        padding: 7px 0;
+        font-weight: 400;
+        letter-spacing: 0.01em; 
+    }
+    .topbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .topbar-links { display: flex; gap: 20px; }
+    .topbar-links a {
+        color: #b8d4c5;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.2s;
+    }
+    .topbar-links a:hover { color: var(--white); }
+    .topbar-links svg { width: 13px; height: 13px; fill: currentColor; }
+
+    /* NAV */
+    nav {
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 16px rgba(30,94,64,0.07);
+    }
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-badge {
+        width: 82px; height: 82px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .logo-badge{ width: 82px; height: 82px; fill: var(--gold); }
+    .logo-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 18px; color: var(--green-dark); line-height: 1.1; }
+    .logo-text span { font-size: 11px; color: var(--text-gray); letter-spacing: 0.05em; text-transform: uppercase; }
+    .logo-text small { display: block; font-size: 10px; color: var(--text-gray); }
+
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-dark);
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: all 0.2s;
+        display: flex; align-items: center; gap: 4px;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--green-mid); background: rgba(30,94,64,0.06); }
+    .nav-links a.active { border-bottom: 2px solid var(--green-mid); border-radius: 6px 6px 0 0; }
+
+    .btn-enquire {
+        background: var(--green-dark);
+        color: var(--white) !important;
+        padding: 10px 18px !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        display: flex; align-items: center; gap: 7px;
+        transition: background 0.2s !important;
+    }
+    .btn-enquire:hover { background: var(--green-accent) !important; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    /* HERO */
+    .hero {
+        background: linear-gradient(135deg, #f0f7f3 0%, #e5f2eb 50%, #f7fbf8 100%);
+        padding: 64px 0 0;
+        overflow: hidden;
+        position: relative;
+        min-height: 520px;
+    }
+    .hero::before {
+        content: '';
+        position: absolute; right: 0; top: 0;
+        width: 55%; height: 100%;
+        background: linear-gradient(160deg, #dceee4 0%, #c6e0d2 100%);
+        clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .hero-inner { display: flex; align-items: flex-end; gap: 48px; position: relative; }
+    .hero-content { flex: 0 0 48%; padding-bottom: 64px; }
+    .hero-tag {
+        display: inline-block;
+        background: rgba(30,94,64,0.1);
+        color: var(--green-mid);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(30,94,64,0.2);
+    }
+    .hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(36px, 4.5vw, 54px);
+        font-weight: 800;
+        line-height: 1.1;
+        color: var(--green-dark);
+        margin-bottom: 20px;
+    }
+    .hero p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-gray);
+        max-width: 380px;
+        margin-bottom: 32px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+        background: var(--green-dark);
+        color: var(--white);
+        padding: 13px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex; align-items: center; gap: 8px;
+        transition: background 0.2s, transform 0.2s;
+        box-shadow: 0 4px 14px rgba(26,71,49,0.25);
+    }
+    .btn-primary:hover { background: var(--green-accent); transform: translateY(-1px); }
+    .btn-outline {
+        border: 2px solid var(--green-dark);
+        color: var(--green-dark);
+        padding: 11px 22px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex; align-items: center; gap: 8px;
+        transition: all 0.2s;
+    }
+    .btn-outline:hover { background: var(--green-dark); color: var(--white); }
+
+    .hero-image { flex: 0 0 50%; position: relative; align-self: flex-end; }
+    .hero-image img {
+        width: 100%; max-height: 440px;
+        object-fit: cover; object-position: top;
+        display: block;
+        border-radius: 0;
+        filter: drop-shadow(0 8px 32px rgba(26,71,49,0.15));
+    }
+
+    /* FEATURES BAR */
+    .features-bar { background: var(--white); border-top: 1px solid var(--border); }
+    .features-grid {
+        display: grid; grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1px solid var(--border);
+    }
+    .feature-item {
+        display: flex; align-items: flex-start; gap: 14px;
+        padding: 28px 24px;
+        border-right: 1px solid var(--border);
+        transition: background 0.2s;
+    }
+    .feature-item:last-child { border-right: none; }
+    .feature-item:hover { background: var(--off-white); }
+    .feature-icon {
+        width: 44px; height: 44px; min-width: 44px;
+        background: var(--green-dark);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .feature-icon svg { width: 22px; height: 22px; fill: var(--white); }
+    .feature-item h4 { font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+    .feature-item p { font-size: 12.5px; color: var(--text-gray); line-height: 1.5; }
+
+    /* SECTION COMMONS */
+    section { padding: 72px 0; }
+    .section-label {
+        font-size: 11px; font-weight: 700;
+        letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--green-accent);
+        display: flex; align-items: center; gap: 10px;
+        margin-bottom: 14px;
+    }
+    .section-label::after {
+        content: ''; display: block;
+        width: 40px; height: 2px;
+        background: var(--green-accent);
+        border-radius: 2px;
+    }
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(28px, 3vw, 38px);
+        font-weight: 700;
+        color: var(--text-dark);
+        line-height: 1.2;
+        margin-bottom: 18px;
+    }
+
+    /* ABOUT SECTION */
+    .about-section { background: var(--off-white); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 0.85fr 1fr 0.95fr; gap: 24px; align-items: start; width: 100%; }
+
+    .about-content p { font-size: 15px; line-height: 1.8; color: var(--text-gray); margin-bottom: 24px; }
+    .btn-sm {
+        background: var(--green-dark);
+        color: var(--white);
+        padding: 11px 20px;
+        border-radius: 8px;
+        font-size: 13.5px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex; align-items: center; gap: 8px;
+        transition: background 0.2s;
+    }
+    .btn-sm:hover { background: var(--green-accent); }
+
+    .about-image-stack { display: flex; flex-direction: column; gap: 16px; }
+    .about-img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; }
+    .quote-card {
+        background: var(--green-dark);
+        color: var(--white);
+        border-radius: 12px;
+        padding: 24px;
+        position: relative;
+    }
+    .quote-icon { font-size: 32px; color: var(--gold); line-height: 1; margin-bottom: 10px; }
+    .quote-card p { font-size: 14px; line-height: 1.7; font-style: italic; margin-bottom: 12px; }
+    .quote-card cite { font-size: 12px; color: #9ec4b0; font-style: normal; font-weight: 600; }
+
+    .why-choose h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 20px; font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+    }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .why-list li {
+        display: flex; align-items: center; gap: 12px;
+        font-size: 14px; color: var(--text-dark); font-weight: 500;
+        padding: 10px 14px;
+        background: var(--white);
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .why-list li:hover { border-color: var(--green-light); box-shadow: 0 2px 12px rgba(30,94,64,0.08); }
+    .why-icon { width: 28px; height: 28px; min-width: 28px; fill: var(--green-mid); }
+
+    /* QUICK LINKS */
+    .quick-links-box {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 0;
+        overflow: hidden;
+        margin-top: 4px;
+    }
+    .ql-header {
+        background: var(--green-dark);
+        color: var(--white);
+        padding: 14px 20px;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+    .ql-list { list-style: none; }
+    .ql-list li a {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 13px 20px;
+        border-bottom: 1px solid var(--border);
+        text-decoration: none;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--text-dark);
+        transition: all 0.2s;
+    }
+    .ql-list li:last-child a { border-bottom: none; }
+    .ql-list li a:hover { background: var(--off-white); color: var(--green-mid); padding-left: 26px; }
+    .ql-list li a span { color: var(--text-gray); font-size: 16px; }
+
+    /* ADMISSIONS BANNER */
+    .admissions-banner { background: var(--off-white); padding: 56px 0; }
+    .banner-grid { display: grid; grid-template-columns: auto 1fr auto; gap: 40px; align-items: center; background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 32px rgba(30,94,64,0.08); }
+    .banner-img { width: 260px; height: 180px; object-fit: cover; }
+    .banner-content { padding: 32px 24px; }
+    .banner-tag {
+        font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+        color: var(--green-accent); margin-bottom: 8px;
+        display: flex; align-items: center; gap: 8px;
+    }
+    .banner-tag::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .banner-content h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+    .banner-content p { font-size: 14px; color: var(--text-gray); }
+    .banner-features {
+        padding: 32px 24px; padding-right: 40px;
+        display: flex; flex-direction: column; gap: 20px;
+    }
+    .banner-icons { display: flex; gap: 32px; flex-wrap: wrap; }
+    .banner-icon-item { text-align: center; }
+    .bicon { width: 44px; height: 44px; background: rgba(30,94,64,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
+    .bicon svg { width: 22px; height: 22px; fill: var(--green-mid); }
+    .banner-icon-item p { font-size: 11.5px; font-weight: 600; color: var(--text-dark); line-height: 1.3; max-width: 70px; }
+
+    /* STATS */
+    .stats-section { background: var(--green-dark); padding: 56px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; text-align: center; }
+    .stat-item { color: var(--white); padding: 20px; }
+    .stat-icon { width: 44px; height: 44px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+    .stat-icon svg { width: 22px; height: 22px; fill: var(--gold); }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 800; color: var(--white); line-height: 1; }
+    .stat-unit { font-size: 22px; color: var(--gold); }
+    .stat-label { font-size: 13px; color: #9ec4b0; margin-top: 6px; line-height: 1.4; }
+
+    /* FOOTER */
+    footer { background: #0f2b1d; color: #9ec4b0; }
+    .footer-main { padding: 56px 0 40px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1.2fr 1.2fr 1.6fr; gap: 48px; }
+    .footer-brand .logo-badge { width: 48px; height: 48px; margin-bottom: 14px; }
+    .footer-brand strong { display: block; font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); }
+    .footer-brand span { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7aac94; }
+    .footer-brand p { font-size: 13.5px; line-height: 1.7; margin: 14px 0 20px; color: #7aac94; }
+    .social-links { display: flex; gap: 10px; }
+    .social-btn { width: 34px; height: 34px; background: rgba(255,255,255,0.07); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s; }
+    .social-btn:hover { background: var(--green-mid); }
+    .social-btn svg { width: 16px; height: 16px; fill: #9ec4b0; }
+
+    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul li a { text-decoration: none; font-size: 13.5px; color: #7aac94; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 13px; font-size: 13.5px; color: #7aac94; }
+    .contact-item svg { width: 16px; height: 16px; fill: var(--green-light); flex-shrink: 0; margin-top: 2px; }
+    .map-placeholder { background: rgba(255,255,255,0.06); border-radius: 8px; height: 80px; display: flex; align-items: center; justify-content: center; margin-top: 14px; font-size: 12px; color: #5a9070; border: 1px solid rgba(255,255,255,0.08); }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding: 18px 0;
+        display: flex; align-items: center; justify-content: space-between;
+        font-size: 12.5px; color: #5a9070;
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: #5a9070; text-decoration: none; }
+    .footer-bottom-links a:hover { color: var(--white); }
+
+    /* RESPONSIVE BASIC */
+    @media (max-width: 900px) {
+        .features-grid { grid-template-columns: 1fr 1fr; }
+        .about-grid { grid-template-columns: 1fr 1fr; }
+        .stats-grid { grid-template-columns: repeat(3, 1fr); }
+        .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        .banner-grid { grid-template-columns: 1fr; }
+        .banner-img { width: 100%; height: 180px; }
+        .hero-inner { flex-direction: column; }
+        .hero-image { width: 100%; }
+        .nav-links { display: none; }
+    }
+    </style>
+    </head>
+    <body>
+
+    <!-- NAVBAR -->
+    <nav>
+    <div class="container">
+        <div class="nav-inner">
+        <a href="#" class="logo">
+            <div class="logo-badge">
+            <img src="{% static 'logo.png'%}" alt="Logo" class="logo-badge"/>
+            </div>
+            <div class="logo-text">
+            <strong>MAS English Medium School</strong>
+            <small>Education will lighten the world</small>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="v1about">About Us</a></li>
+            <li><a href="v1aca">Academics</a></li>
+            <li><a href="v1fees">Gallery</a></li>
+            <li><a href="v1form" class="btn-enquire">Enquire Now</a></li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" style="padding-top:64px;">
+    <div class="container">
+        <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-tag">Admissions Open 2024–25</div>
+            <h1>Inspiring Excellence,<br>Shaping Tomorrow.</h1>
+            <p>MAS English Medium School provides a nurturing environment where every child learns, grows and excels with confidence.</p>
+            <div class="hero-btns">
+            <a href="/v1form" class="btn-primary">Admissions Open 2024–25 →</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Placeholder for students image -->
+            <div style="width:100%;height:420px;background:linear-gradient(160deg,#c6e0d2,#a5ccb9);border-radius:16px 16px 0 0;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <div style="text-align:center;color:var(--green-dark);opacity:0.5;">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 12.45L3.48 10.7 12 6.05l8.52 4.65L12 15.45z"/></svg>
+                <p style="margin-top:12px;font-size:14px;font-weight:600;">Student Photo</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- FEATURES BAR -->
+    <div class="features-bar">
+    <div class="container" style="padding:0 28px;">
+        <div class="features-grid">
+        <div class="feature-item">
+            <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
+            </div>
+            <div>
+            <h4>Quality Education</h4>
+            <p>CBSE & BLENDEN LEARNING curriculum with a focus on conceptual learning.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <div>
+            <h4>Experienced Faculty</h4>
+            <p>Dedicated teachers guiding every student.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+            </div>
+            <div>
+            <h4>Holistic Development</h4>
+            <p>Academic excellence with sports, arts &amp; life skills.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.47-2.34 6.72-5 7.93-2.66-1.21-5-4.46-5-7.93V7.18L12 5z"/></svg>
+            </div>
+            <div>
+            <h4>Safe &amp; Nurturing Campus</h4>
+            <p>A secure and friendly environment for your child.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ABOUT + WHY + QUICK LINKS -->
+    <section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+        <!-- About -->
+        <div class="about-content">
+            <div class="section-label">WHO WE ARE</div>
+            <h2 class="section-title">Shaping Bright Futures Every Day</h2>
+            <p> At MAS English Medium School, we focus on building confident, creative,
+        and capable students. Our approach blends strong academics with values,
+        leadership, and real-world skills to prepare children for tomorrow.</p>
+        <p>With a nurturing environment, experienced teachers, and a vibrant campus life,
+        we empower every child to discover their potential and shine in their own unique way.</p>
+        </div>
+
+        <!-- Image + Quote -->
+        <div class="about-image-stack">
+            <div style="width:100%;height:190px;background:linear-gradient(135deg,#d0e8da,#a8ccb8);border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="#1e5e40" opacity="0.3"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
+            </div>
+            <div class="quote-card">
+            <div class="quote-icon">"</div>
+            <p>Education is the most powerful weapon which you can use to change the world.</p>
+            <cite>— Nelson Mandela</cite>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div>
+            <div class="section-label">Why Choose Us</div>
+            <ul class="why-list">
+            <li>
+                <svg class="why-icon" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1z"/></svg>
+                CBSE &amp; Blended Learning Curriculum
+            </li>
+            <li>
+                <svg class="why-icon" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg>
+                Smart Classrooms
+            </li>
+            <li>
+                <svg class="why-icon" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                Well Equipped Laboratories
+            </li>
+            <li>
+                <svg class="why-icon" viewBox="0 0 24 24"><path d="M12 3C6.48 3 2 7.48 2 13s4.48 10 10 10 10-4.48 10-10S17.52 3 12 3zm1 17.93V19c0-.55-.45-1-1-1s-1 .45-1 1v1.93C7.06 20.44 4 17.19 4 13h1c.55 0 1-.45 1-1s-.45-1-1-1H4c0-4.19 3.06-7.44 7-7.93V4c0 .55.45 1 1 1s1-.45 1-1V3.07C16.94 3.56 20 6.81 20 11h-1c-.55 0-1 .45-1 1s.45 1 1 1h1c0 4.19-3.06 7.44-7 7.93z"/></svg>
+                Co-curricular Activities
+            </li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <div class="quick-links-box">
+            <div class="ql-header">Quick Links</div>
+            <ul class="ql-list">
+                <li><a href="/v1aca">Academic Calendar <span>›</span></a></li>
+                <li><a href="#">Fee Structure <span>›</span></a></li>
+                <li><a href="#">Gallery <span>›</span></a></li>
+                <li><a href="/v1form">Apply Online <span>›</span></a></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ADMISSIONS BANNER -->
+    <div class="admissions-banner">
+    <div class="container">
+        <div class="banner-grid">
+        <div style="width:260px;height:180px;background:linear-gradient(135deg,#c6e0d2,#7aac94);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="#1a4731" opacity="0.4"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 12.45L3.48 10.7 12 6.05l8.52 4.65L12 15.45z"/></svg>
+        </div>
+        <div class="banner-content">
+            <div class="banner-tag">Admissions Open 2024–25</div>
+            <h2>Give Your Child the Best Start in Life</h2>
+            <p>Limited seats available. Enroll now and be a part of the MAS family.</p>
+            <a href="/v1form" class="btn-primary" style="margin-top:18px;display:inline-flex;">Apply for Admission →</a>
+        </div>
+        <div class="banner-features">
+            <div class="banner-icons">
+            <div class="banner-icon-item">
+                <div class="bicon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+                <p>Daycare to Grade II</p>
+            </div>
+            <div class="banner-icon-item">
+                <div class="bicon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1z"/></svg></div>
+                <p>CBSE &amp; Blended Learning Curriculum </p>
+            </div>
+            <div class="banner-icon-item">
+                <div class="bicon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+                <p>Safe &amp; Secure Environment</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+    <div class="footer-main">
+        <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+            <div class="logo-badge">
+                <img src="{% static 'logo.png'%}" alt="Logo" class="logo-badge"/>
+            </div>
+            <strong>MAS</strong>
+            <span>English Medium School</span>
+            <p>MAS English Medium School is committed to providing quality education and holistic development in a safe and nurturing environment.</p>
+            <div class="social-links">
+                <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="#0f2b1d" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87a1 1 0 11-1-1 1 1 0 011 1z"/></svg></a>
+                <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#0f2b1d" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+                <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+            </div>
+
+            <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="/v1adout">About Us</a></li>
+                <li><a href="/v1aca">Academics</a></li>
+                <li><a href="#">Fee Structure</a></li>
+                <li><a href="#">Gallery</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-col">
+            <h4>Contact Us</h4>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                +91 1234 567 890
+            </div>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                info@maschool.in
+            </div>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                MAS School Campus, Your Street, Your City, Kerala - 676XXX
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer-bottom">
+        <span>Made By Eden</span>
+        </div>
+    </div>
+    </footer>
+    </body>
+    </html>

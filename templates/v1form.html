@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Application Form | MAS English Medium School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gvGreen: '#2d8a44',
+                        gvLightGreen: '#f8faf9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-badge {
+        width: 82px; height: 82px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .logo-badge{ width: 82px; height: 82px;}
+        body { background-color: #f3f4f6; }
+        .form-input {
+            @apply w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:border-gvGreen focus:ring-1 focus:ring-gvGreen transition-all;
+        }
+        label { @apply block text-sm font-semibold text-gray-700 mb-1.5; }
+        .section-header { @apply flex items-center gap-3 pb-4 mb-6 border-b border-gray-200; }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="bg-white px-6 md:px-20 py-4 flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-2">
+            <div><img src="{%static  'logo.png'%}" alt="Logo" class="logo-badge"/></div>
+            <div>
+                <h1 class="text-xl font-bold text-gvGreen leading-none">MAS English Medium School</h1>
+                <p class="text-[10px] uppercase tracking-widest font-bold text-gray-500">English Medium School</p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-gvGreen text-white py-12 px-6 md:px-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <h2 class="text-4xl font-bold mb-2 relative z-10">Admission Application Form</h2>
+        <p class="text-sm opacity-90 relative z-10">Home &nbsp; > &nbsp; Admissions &nbsp; > &nbsp; <span class="text-yellow-400">Application Form</span></p>
+    </div>
+
+    <div class="max-w-5xl mx-auto my-12 bg-white rounded-xl shadow-lg p-8 md:p-12">
+        <form id="admissionForm">
+            
+            <div class="section-header">
+                <div class="text-gvGreen text-2xl"><i class="far fa-user"></i></div>
+                <div>
+                    <h3 class="font-bold text-gray-800">Student Information</h3>
+                    <p class="text-xs text-gray-400">Please fill in the details carefully.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div>
+                    <label>First Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="firstName" required class="form-input" placeholder="Enter first name">
+                </div>
+                <div>
+                    <label>Middle Name</label>
+                    <input type="text" name="middleName" class="form-input" placeholder="Enter middle name">
+                </div>
+                <div>
+                    <label>Last Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="lastName" required class="form-input" placeholder="Enter last name">
+                </div>
+                <div>
+                    <label>Date of Birth <span class="text-red-500">*</span></label>
+                    <input type="date" name="dob" required class="form-input">
+                </div>
+                <div>
+                    <label>Gender <span class="text-red-500">*</span></label>
+                    <div class="flex gap-4 pt-2">
+                        <label class="font-normal flex items-center gap-2 cursor-pointer"><input type="radio" name="gender" value="male" checked class="accent-gvGreen"> Male</label>
+                        <label class="font-normal flex items-center gap-2 cursor-pointer"><input type="radio" name="gender" value="female" class="accent-gvGreen"> Female</label>
+                        <label class="font-normal flex items-center gap-2 cursor-pointer"><input type="radio" name="gender" value="other" class="accent-gvGreen"> Other</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Blood Group</label>
+                    <select name="bloodGroup" class="form-input">
+                        <option value="">Select blood group</option>
+                        <option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nationality <span class="text-red-500">*</span></label>
+                    <select name="nationality" required class="form-input">
+                        <option value="">Select nationality</option>
+                        <option>Indian</option><option>NRI</option><option>Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Religion</label>
+                    <select name="religion" class="form-input">
+                        <option value="">Select religion</option>
+                        <option>Hinduism</option><option>Islam</option><option>Christianity</option><option>Sikhism</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Category</label>
+                    <select name="category" class="form-input">
+                        <option value="">Select category</option>
+                        <option>General</option><option>OBC</option><option>SC/ST</option>
+                    </select>
+                </div>
+                 <div>
+                    <label>Pattern</label>
+                    <select name="bloodGroup" class="form-input">
+                        <option value="">Select the Pattern</option>
+                        <option>CBSE</option><option>BLENDEN LEARNING </option>
+                    </select>
+                </div>
+                <div>
+                    <label>Class Applying For <span class="text-red-500">*</span></label>
+                    <select name="classApplying" required class="form-input">
+                        <option value="">Select class</option>
+                        <option>Daycare </option><option>Playgroup</option><option>Nursery </option><option>Jr.KG</option><option>Sr.KG</option><option>1th standard </option><option>2th standard </option>
+                    </select>
+                </div>
+                <div class="md:col-span-2">
+                    <label>Current School</label>
+                    <input type="text" name="currentSchool" class="form-input" placeholder="Enter current school name">
+                </div>
+            </div>
+
+            <div class="section-header">
+                <div class="text-gvGreen text-2xl"><i class="fas fa-users-viewfinder"></i></div>
+                <div>
+                    <h3 class="font-bold text-gray-800">Parent / Guardian Information</h3>
+                    <p class="text-xs text-gray-400">Please provide parent or guardian details.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div>
+                    <label>Parent / Guardian Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="parentName" required class="form-input" placeholder="Enter name">
+                </div>
+                <div>
+                    <label>Relationship <span class="text-red-500">*</span></label>
+                    <select name="relationship" required class="form-input">
+                        <option value="">Select relationship</option>
+                        <option>Father</option><option>Mother</option><option>Guardian</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Mobile Number <span class="text-red-500">*</span></label>
+                    <input type="tel" name="mobile" required class="form-input" placeholder="Enter mobile number">
+                </div>
+                <div>
+                    <label>Email Address <span class="text-red-500">*</span></label>
+                    <input type="email" name="email" required class="form-input" placeholder="Enter email address">
+                </div>
+                <div>
+                    <label>Alternate Mobile Number</label>
+                    <input type="tel" name="altMobile" class="form-input" placeholder="Enter alternate number">
+                </div>
+                <div>
+                    <label>Occupation</label>
+                    <input type="text" name="occupation" class="form-input" placeholder="Enter occupation">
+                </div>
+            </div>
+
+            <div class="section-header">
+                <div class="text-gvGreen text-2xl"><i class="fas fa-home"></i></div>
+                <div>
+                    <h3 class="font-bold text-gray-800">Address Information</h3>
+                    <p class="text-xs text-gray-400">Please provide permanent address details.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label>Address Line 1 <span class="text-red-500">*</span></label>
+                    <input type="text" name="address1" id="address1" required class="form-input" placeholder="Enter address line 1">
+                </div>
+                <div>
+                    <label>Address Line 2</label>
+                    <input type="text" name="address2" id="address2" class="form-input" placeholder="Enter address line 2">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div>
+                    <label>City / Town <span class="text-red-500">*</span></label>
+                    <input type="text" name="city" id="city" required class="form-input" placeholder="Enter city">
+                </div>
+                <div>
+                    <label>State <span class="text-red-500">*</span></label>
+                    <select name="state" id="state" required class="form-input">
+                        <option value="">Select state</option>
+                        <option>Kerala</option><option>Tamil Nadu</option><option>Karnataka</option><option>Maharashtra</option>
+                    </select>
+                </div>
+                <div>
+                    <label>PIN Code <span class="text-red-500">*</span></label>
+                    <input type="text" name="pincode" id="pincode" required class="form-input" placeholder="Enter pin code">
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-10">
+                <input type="checkbox" id="sameAddress" class="w-4 h-4 accent-gvGreen cursor-pointer">
+                <label for="sameAddress" class="mb-0 font-medium cursor-pointer">Same as permanent address</label>
+            </div>
+
+            <div class="flex justify-between items-center border-t border-gray-100 pt-8">
+                <button type="button" id="resetBtn" class="px-10 py-2.5 border border-gvGreen text-gvGreen font-bold rounded-md hover:bg-gvLightGreen transition">Reset</button>
+                <button type="submit" class="px-10 py-2.5 bg-gvGreen text-white font-bold rounded-md hover:bg-opacity-90 shadow-md transition">Submit Application</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    const form = document.getElementById('admissionForm');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // 1. Reset functionality
+    resetBtn.addEventListener('click', () => {
+        if(confirm("Are you sure you want to clear the form?")) {
+            form.reset();
+        }
+    });
+
+    // 2. Form Submit & Send to WhatsApp
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Target phone number
+        const phoneNumber = "919730258705"; // Added '91' country code for India
+        
+        // Gather Form Data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        // Format the message for WhatsApp
+        let message = `*New Admission Application*%0A`;
+        message += `---------------------------%0A`;
+        message += `*Student Name:* ${data.firstName} ${data.lastName}%0A`;
+        message += `*Class Applying:* ${data.classApplying}%0A`;
+        message += `*DOB:* ${data.dob}%0A`;
+        message += `*Gender:* ${data.gender}%0A`;
+        message += `*Parent Name:* ${data.parentName}%0A`;
+        message += `*Mobile:* ${data.mobile}%0A`;
+        message += `*City:* ${data.city}%0A`;
+        message += `---------------------------`;
+
+        // Generate WhatsApp URL
+        // Using api.whatsapp.com for better cross-device compatibility
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+        
+        // Optional: Show a loading state or alert before redirecting
+        alert("Redirecting to WhatsApp to send your application...");
+        
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, '_blank').focus();
+        
+        // Optional: Reset form after sending
+        // form.reset();
+    });
+</script>
+</body>
+</html>
